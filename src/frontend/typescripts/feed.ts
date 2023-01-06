@@ -1,7 +1,3 @@
-// import React from 'react';
-import logo from '../images/logo.png';
-import '../stylesheets/modal.css';
-import feed from '../typescripts/feed'
 import React, { useState } from 'react';
 // /*************************************************************
 //  * 담당자 : 김건희
@@ -64,51 +60,23 @@ import React, { useState } from 'react';
  *       2. 입력값을 입력하기 위해 엔터 또는 버튼을 누를시 input 입력값을 초기화
  *       3. 입력란에 아무값도 없을 경우 알람기능 추가
  *********************************************************************/
-//버튼을 누를시 feed 박스에 값 넣기
+function feed(){
+    appendCommand();
+    deleteCommand();
+}
 function appendCommand() {
-    let feedAdd = "";
-    let addValue = (document.getElementById("command") as HTMLInputElement).value;
+    let todayScheduleAdd = "";
+    let addValue = (<HTMLInputElement>document.getElementById("command")).value;
 
-    feedAdd += `<div id="delete" class="scheduleCheckBox" style="display: flex;">`
+    todayScheduleAdd += `<div id="" onclick="deletecommand('')" class="scheduleCheckBox" style="display: flex;">`
+        + `<input type="checkbox" class="todayScheduleCheckBox" onclick="todayCheckbox('', this)">`
         + `<div id="scheduleName">${addValue}</div>`
         + `</div>`;
-    (document.getElementById('feed') as HTMLElement).innerHTML = feedAdd;
-    (document.getElementById('command') as HTMLInputElement).value = "";
-    (document.getElementById('delete') as HTMLInputElement).addEventListener("click",(e:Event)=>{
-      (document.getElementById('delete') as HTMLInputElement).remove();
-    })
-    date();
-}
-//날짜 값 계산 및 포맷
-function date(){
-  const TIME_ZONE = 3240 * 10000;
-  const d = new Date();
-  const date = new Date(+d + TIME_ZONE).toISOString().split('T')[0];
-  const time = d.toTimeString().split(' ')[0];
 
-  console.log(date + ' ' + time);
-  let nowTime=date + ' ' + time
-  return nowTime;
+    (<HTMLInputElement>document.getElementById('feed')).innerHTML += todayScheduleAdd;
+    (<HTMLInputElement>document.getElementById('command')).value = "";
 }
-// function deletecommand(){
-//   (document.getElementById('delete') as HTMLInputElement).remove();
-// }
-//모달창
-function Modal() {
-  return (
-    <div className="Modal">
-      <header className="Modal-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <div id='feed' className='feed'>
-        
-      </div>
-      <div className='CommandPost'>
-        <input id='command' type='text'></input>
-        <div className='clickButton' onClick={appendCommand}><p> | </p>전송</div>
-      </div>
-    </div>
-  );
-}
+function deleteCommand(){
 
-export default Modal;
+}
+export default feed;
