@@ -4,7 +4,6 @@ body{
   background: url('../images/bg_img.png');
 }
 .App {
-  text-align: center;
   width: 100%;
   height: 100vh;
   display: flex;

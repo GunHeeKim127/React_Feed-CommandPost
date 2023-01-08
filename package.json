@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/react-dom": "^18.0.10",
+    "child_process": "^1.0.2",
     "cookie-parser": "^1.4.6",
     "csv": "^6.2.5",
     "express": "^4.18.2",
@@ -18,6 +19,7 @@
     "nextjs": "^0.0.3",
     "path": "^0.12.7",
     "python": "^0.0.4",
+    "python-shell": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -51,5 +53,6 @@
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "typescript": "^4.9.4"
-  }
+  },
+  "browser": { "fs": false, "child_process": false,"querystring": false }
 }
