@@ -17,6 +17,7 @@ function appendCommand() {
     let addValue = (document.getElementById("command") as HTMLInputElement).value;
     let i = 0;
     let state="create";
+    if (addValue==="") alert("내용이 비었습니다.")
 
     feedAdd += `<div id="delete+${i}" class="deleteBox" style="display: flex; flex-direction:column">`
         + `<div id="name">김건희</div>`
